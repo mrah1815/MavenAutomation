@@ -1,5 +1,4 @@
 FROM openjdk:17
-WORKDIR /app
-COPY ${JAR_FILE} app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
+ADD target/devops-integration.jar devops-integration.jar
+ENTRYPOINT ["java","-jar","/devops-integration.jar"]
